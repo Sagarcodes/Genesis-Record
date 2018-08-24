@@ -88,5 +88,27 @@ int main(){
     cout<<"Enter Data for genesis node : ";
     cin>>data;
     Node gen(++nodeNum,data,NULL,NULL);
+    int values;
+    do{
+        cout<<"Select Option :"<<endl;
+        cout<<"1 : Add Node to genesis Node"<<endl;
+        cout<<"2 : Merge Two Nodes"<<endl;
+        cout<<"3 : Add Node to certain Node by providing address of it."<<endl;
+        cout<<"4 : Find longest chain of genesis node."<<endl;
+        cout<<"5 : Find longest chain of Node by providing address of it."<<endl;
+        cout<<"6 : Exit"<<endl;
+        cout<<"Enter value : ";
+        cin>>values;
+        switch(values){
+            case 1:
+                cout<<"Enter data : ";
+                cin>>data;
+                bool add = addNode(data,&gen,++nodeNum,&gen);
+                add ? cout<<"Added"<<endl : cout<<"Can't Add"<<endl;
+                break;
+           
+        }
+    }
+    while(values != 6);
     return 0;
 }
